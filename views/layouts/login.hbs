@@ -1,0 +1,22 @@
+<form id="login" method="POST">
+	<input type="email" name="email" placeholder="Ingresa email">
+	<br><br>
+	<input type="password" name="password" value="" placeholder="Ingresa contraseña">
+	<br><br>
+	<input type="submit" value="Login">
+</form>
+
+<script>
+	const formLogin = document.querySelector('#login');
+	const formData = new FormData(formLogin);
+
+	formLogin.addEventListener('submit', event => {
+		event.preventDefault(); //Comportamiento por defecto del formulario no sea recargue la página, osea que se quede ahí
+		fetch('/api/signin', { //Envia por defecto peticiones GET, pero le digo que use POST
+			method: 'POST',
+			body:formData
+		}).then(res => res.json()) //Recibe una promesa con una respuesta que duelvo en JSON
+		.then(data => console.log(data))
+	})
+
+</script>

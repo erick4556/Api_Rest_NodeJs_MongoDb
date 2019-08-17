@@ -1,0 +1,22 @@
+<script>
+	
+	let producList = document.createElement('ul');
+
+	const myHeaders = new Headers();
+	myHeaders.append('authorization', `Bearer ${localStorage.token}`); // Añado una cabecera
+
+	fetch('api/product',{
+		method: 'GET',
+		headers: myHeaders
+	}).then(res => res.json()).then(data => {
+		data.product.map(product =>{
+			let text = document.createTextNode(product.name);
+			let elem = document.createElement('li');
+			elem.appendChild(text);
+			producList.appendChild(elem);
+		})
+
+		document.body.appendChild(producList);
+	});
+
+</script>

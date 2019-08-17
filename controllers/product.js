@@ -21,13 +21,13 @@ function getProducts(req, res){
 		apellido:'Mendez'
 	}]});*/
 
-	/*Product.find((err,product)=>{
+	Product.find((err,producto)=>{
 		if(err)return res.status(500).send({message:'Error al realizar la petición'})
 		
 
-		res.status(200).send({product:product})	
+		res.status(200).send({product:producto})	
 
-	})*/
+	})
 
 
 	/* //Otra forma
@@ -39,13 +39,13 @@ function getProducts(req, res){
 		}
 	})*/
 
-	Product.find({}).exec(function(err,producto){
+	/*Product.find({}).exec(function(err,producto){
 		if(err){
 			return res.status(500).send({message:'Error al realizar la petición'})
 		}else{
 			res.status(200).send({product:producto})
 		}
-	})
+	})*/
 
 	
 	

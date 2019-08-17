@@ -15,7 +15,7 @@ function createToken(user){
 }
 
 function decodeToken(token){
-	//promesa. resolve: Cuando la promesa esta resuelta, se ha resuleto la función que hay que llamar
+	//promesa. resolve: Cuando la promesa esta resuelta, se ha resuelto la función que hay que llamar
 	//reject: Ha ocurrido un error y la promesa no se ha podido cumplir
 	var decoded = new Promise((resolve,reject)=>{
 		try{

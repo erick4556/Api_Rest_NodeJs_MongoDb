@@ -11,7 +11,7 @@ var api = express.Router()
 //Llamadas de las funciones del controlador
 //api.get('/api/product',productController.getProducts) Quito la palabra api del principio por que en otro archivo digo que lo voy usar
 
-api.get('/product',auth,productController.getProducts)
+api.get('/product',productController.getProducts)
 
 api.get('/product/:productId',productController.getProduct)
 
